@@ -32,6 +32,7 @@ class User extends Authenticatable
         'passout_batch',
         'profession',
         'profession_specification',
+        'qr_code_image',
     ];
 
     /**

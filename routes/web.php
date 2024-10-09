@@ -18,5 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
-Route::get('/register-allumni', [AuthController::class, 'registerNavodayanForm'])->name('user.registerNavodayanForm');
-Route::post('/register-allumni', [AuthController::class, 'registerNavodayanFormSubmit'])->name('user.registerNavodayanFormSubmit');
+Route::get('/allumni-register', [AuthController::class, 'registerNavodayanForm'])->name('user.registerNavodayanForm');
+Route::post('/allumni-register', [AuthController::class, 'registerNavodayanFormSubmit'])->name('user.registerNavodayanFormSubmit');
+
