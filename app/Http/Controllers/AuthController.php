@@ -118,4 +118,9 @@ class AuthController extends Controller
     {
         return view('auth.allumni-qrcode');
     }
+
+    public function registerAdminForm()
+    {
+        return view();
+    }
 }

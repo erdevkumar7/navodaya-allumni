@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
-Route::get('/allumni-register', [AuthController::class, 'registerNavodayanForm'])->name('user.registerNavodayanForm');
-Route::post('/allumni-register', [AuthController::class, 'registerNavodayanFormSubmit'])->name('user.registerNavodayanFormSubmit');
+Route::prefix('allumni')->group(function(){
+    Route::get('/register', [AuthController::class, 'registerNavodayanForm'])->name('user.registerNavodayanForm');
+    Route::post('/register', [AuthController::class, 'registerNavodayanFormSubmit'])->name('user.registerNavodayanFormSubmit');
+
+});
+
+Route::prefix('admin')->group(function(){
+    Route::get('/register',[AuthController::class, 'registerAdminForm'])->name('admin.registerAdminForm');
+
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+});
 

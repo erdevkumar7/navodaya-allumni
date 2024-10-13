@@ -1,132 +1,1464 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html class="no-js" lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login | Nalika - Material Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/bootstrap.min.css')}}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/font-awesome.min.css')}}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('them/css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{asset('them/css/owl.transitions.css')}}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/animate.css')}}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/normalize.css')}}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/main.css')}}">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/morrisjs/morris.css')}}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/metisMenu/metisMenu.min.css')}}">
+    <link rel="stylesheet" href="{{asset('them/css/metisMenu/metisMenu-vertical.css')}}">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/calendar/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{asset('them/css/calendar/fullcalendar.print.min.css')}}">
+    <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/form/all-type-forms.css')}}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/style.css')}}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('them/css/responsive.css')}}">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="{{asset('them/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+</head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+        <div class="left-sidebar-pro">
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                    <strong><img src="img/logo/logosn.png" alt="" /></strong>
                 </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
+                <div class="nalika-profile">
+                    <div class="profile-dtl">
+                        <a href="#"><img src="img/notification/4.jpg" alt="" /></a>
+                        <h2>Lakian <span class="min-dtn">Das</span></h2>
+                    </div>
+                    <div class="profile-social-dtl">
+                        <ul class="dtl-social">
+                            <li><a href="#"><i class="icon nalika-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon nalika-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon nalika-linkedin"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
+                <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                    <nav class="sidebar-nav left-sidebar-menu-pro">
+                        <ul class="metismenu" id="menu1">
+                            <li class="active">
+                                <a class="has-arrow" href="index.html">
+                                       <i class="icon nalika-home icon-wrap"></i>
+                                       <span class="mini-click-non">Ecommerce</span>
+                                    </a>
+                                <ul class="submenu-angle" aria-expanded="true">
+                                    <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
+                                    <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
+                                    <li><a title="Dashboard v.3" href="index-2.html"> <span class="mini-sub-pro">Dashboard v.3</span></a></li>
+                                    <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Product List</span></a></li>
+                                    <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>
+                                    <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Product Detail</span></a></li>
+                                    <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Product Cart</span></a></li>
+                                    <li><a title="Product Payment" href="product-payment.html"><span class="mini-sub-pro">Product Payment</span></a></li>
+                                    <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
+                                    <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-mail icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
+                                    <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">View Mail</span></a></li>
+                                    <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non">Interface</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Google Map" href="google-map.html"><span class="mini-sub-pro">Google Map</span></a></li>
+                                    <li><a title="Data Maps" href="data-maps.html"><span class="mini-sub-pro">Data Maps</span></a></li>
+                                    <li><a title="Pdf Viewer" href="pdf-viewer.html"><span class="mini-sub-pro">Pdf Viewer</span></a></li>
+                                    <li><a title="X-Editable" href="x-editable.html"><span class="mini-sub-pro">X-Editable</span></a></li>
+                                    <li><a title="Code Editor" href="code-editor.html"><span class="mini-sub-pro">Code Editor</span></a></li>
+                                    <li><a title="Tree View" href="tree-view.html"><span class="mini-sub-pro">Tree View</span></a></li>
+                                    <li><a title="Preloader" href="preloader.html"><span class="mini-sub-pro">Preloader</span></a></li>
+                                    <li><a title="Images Cropper" href="images-cropper.html"><span class="mini-sub-pro">Images Cropper</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non">Miscellaneous</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">File Manager</span></a></li>
+                                    <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
+                                    <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Blog Details</span></a></li>
+                                    <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
+                                    <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-bar-chart icon-wrap"></i> <span class="mini-click-non">Charts</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Bar Charts" href="bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
+                                    <li><a title="Line Charts" href="line-charts.html"><span class="mini-sub-pro">Line Charts</span></a></li>
+                                    <li><a title="Area Charts" href="area-charts.html"><span class="mini-sub-pro">Area Charts</span></a></li>
+                                    <li><a title="Rounded Charts" href="rounded-chart.html"><span class="mini-sub-pro">Rounded Charts</span></a></li>
+                                    <li><a title="C3 Charts" href="c3.html"><span class="mini-sub-pro">C3 Charts</span></a></li>
+                                    <li><a title="Sparkline Charts" href="sparkline.html"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
+                                    <li><a title="Peity Charts" href="peity.html"><span class="mini-sub-pro">Peity Charts</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
+                                    <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-forms icon-wrap"></i> <span class="mini-click-non">Forms Elements</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Basic Form Elements" href="basic-form-element.html"><span class="mini-sub-pro">Bc Form Elements</span></a></li>
+                                    <li><a title="Advance Form Elements" href="advance-form-element.html"><span class="mini-sub-pro">Ad Form Elements</span></a></li>
+                                    <li><a title="Password Meter" href="password-meter.html"><span class="mini-sub-pro">Password Meter</span></a></li>
+                                    <li><a title="Multi Upload" href="multi-upload.html"><span class="mini-sub-pro">Multi Upload</span></a></li>
+                                    <li><a title="Text Editor" href="tinymc.html"><span class="mini-sub-pro">Text Editor</span></a></li>
+                                    <li><a title="Dual List Box" href="dual-list-box.html"><span class="mini-sub-pro">Dual List Box</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-smartphone-call icon-wrap"></i> <span class="mini-click-non">App views</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Notifications" href="notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
+                                    <li><a title="Alerts" href="alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
+                                    <li><a title="Modals" href="modals.html"><span class="mini-sub-pro">Modals</span></a></li>
+                                    <li><a title="Buttons" href="buttons.html"><span class="mini-sub-pro">Buttons</span></a></li>
+                                    <li><a title="Tabs" href="tabs.html"><span class="mini-sub-pro">Tabs</span></a></li>
+                                    <li><a title="Accordion" href="accordion.html"><span class="mini-sub-pro">Accordion</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="removable">
+                                <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-new-file icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a></li>
+                                    <li><a title="Register" href="register.html"><span class="mini-sub-pro">Register</span></a></li>
+                                    <li><a title="Lock" href="lock.html"><span class="mini-sub-pro">Lock</span></a></li>
+                                    <li><a title="Password Recovery" href="password-recovery.html"><span class="mini-sub-pro">Password Recovery</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+        <!-- Start Welcome area -->
+        <div class="all-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="logo-pro">
+                            <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
+                    </div>
+                </div>
+            </div>
+            <div class="header-advance-area">
+                <div class="header-top-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="header-top-wraper">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                            <div class="menu-switcher-pro">
+                                                <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                                        <i class="icon nalika-menu-task"></i>
+                                                    </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                                            <div class="header-top-menu tabl-d-n hd-search-rp">
+                                                <div class="breadcome-heading">
+                                                    <form role="search" class="">
+                                                        <input type="text" placeholder="Search..." class="form-control">
+                                                        <a href=""><i class="fa fa-search"></i></a>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                            <div class="header-right-info">
+                                                <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                    <li class="nav-item dropdown">
+                                                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-mail" aria-hidden="true"></i><span class="indicator-ms"></span></a>
+                                                        <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
+                                                            <div class="message-single-top">
+                                                                <h1>Message</h1>
+                                                            </div>
+                                                            <ul class="message-menu">
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="message-img">
+                                                                            <img src="img/contact/1.jpg" alt="">
+                                                                        </div>
+                                                                        <div class="message-content">
+                                                                            <span class="message-date">16 Sept</span>
+                                                                            <h2>Advanda Cro</h2>
+                                                                            <p>Please done this project as soon possible.</p>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="message-img">
+                                                                            <img src="img/contact/4.jpg" alt="">
+                                                                        </div>
+                                                                        <div class="message-content">
+                                                                            <span class="message-date">16 Sept</span>
+                                                                            <h2>Sulaiman din</h2>
+                                                                            <p>Please done this project as soon possible.</p>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="message-img">
+                                                                            <img src="img/contact/3.jpg" alt="">
+                                                                        </div>
+                                                                        <div class="message-content">
+                                                                            <span class="message-date">16 Sept</span>
+                                                                            <h2>Victor Jara</h2>
+                                                                            <p>Please done this project as soon possible.</p>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="message-img">
+                                                                            <img src="img/contact/2.jpg" alt="">
+                                                                        </div>
+                                                                        <div class="message-content">
+                                                                            <span class="message-date">16 Sept</span>
+                                                                            <h2>Victor Jara</h2>
+                                                                            <p>Please done this project as soon possible.</p>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="message-view">
+                                                                <a href="#">View All Messages</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-alarm" aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                                                        <div role="menu" class="notification-author dropdown-menu animated zoomIn">
+                                                            <div class="notification-single-top">
+                                                                <h1>Notifications</h1>
+                                                            </div>
+                                                            <ul class="notification-menu">
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="notification-icon">
+                                                                            <i class="icon nalika-tick" aria-hidden="true"></i>
+                                                                        </div>
+                                                                        <div class="notification-content">
+                                                                            <span class="notification-date">16 Sept</span>
+                                                                            <h2>Advanda Cro</h2>
+                                                                            <p>Please done this project as soon possible.</p>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="notification-icon">
+                                                                            <i class="icon nalika-cloud" aria-hidden="true"></i>
+                                                                        </div>
+                                                                        <div class="notification-content">
+                                                                            <span class="notification-date">16 Sept</span>
+                                                                            <h2>Sulaiman din</h2>
+                                                                            <p>Please done this project as soon possible.</p>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="notification-icon">
+                                                                            <i class="icon nalika-folder" aria-hidden="true"></i>
+                                                                        </div>
+                                                                        <div class="notification-content">
+                                                                            <span class="notification-date">16 Sept</span>
+                                                                            <h2>Victor Jara</h2>
+                                                                            <p>Please done this project as soon possible.</p>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="notification-icon">
+                                                                            <i class="icon nalika-bar-chart" aria-hidden="true"></i>
+                                                                        </div>
+                                                                        <div class="notification-content">
+                                                                            <span class="notification-date">16 Sept</span>
+                                                                            <h2>Victor Jara</h2>
+                                                                            <p>Please done this project as soon possible.</p>
+                                                                        </div>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="notification-view">
+                                                                <a href="#">View All Notification</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                                <i class="icon nalika-user"></i>
+                                                                <span class="admin-name">Advanda Cro</span>
+                                                                <i class="icon nalika-down-arrow nalika-angle-dw"></i>
+                                                            </a>
+                                                        <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                            <li><a href="register.html"><span class="icon nalika-home author-log-ic"></span> Register</a>
+                                                            </li>
+                                                            <li><a href="#"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
+                                                            </li>
+                                                            <li><a href="lock.html"><span class="icon nalika-diamond author-log-ic"></span> Lock</a>
+                                                            </li>
+                                                            <li><a href="#"><span class="icon nalika-settings author-log-ic"></span> Settings</a>
+                                                            </li>
+                                                            <li><a href="login.html"><span class="icon nalika-unlocked author-log-ic"></span> Log Out</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-menu-task"></i></a>
+    
+                                                        <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
+                                                            <ul class="nav nav-tabs custon-set-tab">
+                                                                <li class="active"><a data-toggle="tab" href="#Notes">News</a>
+                                                                </li>
+                                                                <li><a data-toggle="tab" href="#Projects">Activity</a>
+                                                                </li>
+                                                                <li><a data-toggle="tab" href="#Settings">Settings</a>
+                                                                </li>
+                                                            </ul>
+    
+                                                            <div class="tab-content custom-bdr-nt">
+                                                                <div id="Notes" class="tab-pane fade in active">
+                                                                    <div class="notes-area-wrap">
+                                                                        <div class="note-heading-indicate">
+                                                                            <h2><i class="icon nalika-chat"></i> Latest News</h2>
+                                                                            <p>You have 10 New News.</p>
+                                                                        </div>
+                                                                        <div class="notes-list-area notes-menu-scrollbar">
+                                                                            <ul class="notes-menu-list">
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/4.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/1.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/2.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/3.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/4.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/1.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/2.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/1.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/2.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="notes-list-flow">
+                                                                                            <div class="notes-img">
+                                                                                                <img src="img/contact/3.jpg" alt="" />
+                                                                                            </div>
+                                                                                            <div class="notes-content">
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                                <span>Yesterday 2:45 pm</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="Projects" class="tab-pane fade">
+                                                                    <div class="projects-settings-wrap">
+                                                                        <div class="note-heading-indicate">
+                                                                            <h2><i class="icon nalika-happiness"></i> Recent Activity</h2>
+                                                                            <p> You have 20 Recent Activity.</p>
+                                                                        </div>
+                                                                        <div class="project-st-list-area project-st-menu-scrollbar">
+                                                                            <ul class="projects-st-menu-list">
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="project-list-flow">
+                                                                                            <div class="projects-st-heading">
+                                                                                                <h2>New User Registered</h2>
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                                <span class="project-st-time">1 hours ago</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="project-list-flow">
+                                                                                            <div class="projects-st-heading">
+                                                                                                <h2>New Order Received</h2>
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                                <span class="project-st-time">2 hours ago</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="project-list-flow">
+                                                                                            <div class="projects-st-heading">
+                                                                                                <h2>New Order Received</h2>
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                                <span class="project-st-time">3 hours ago</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="project-list-flow">
+                                                                                            <div class="projects-st-heading">
+                                                                                                <h2>New Order Received</h2>
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                                <span class="project-st-time">4 hours ago</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="project-list-flow">
+                                                                                            <div class="projects-st-heading">
+                                                                                                <h2>New User Registered</h2>
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                                <span class="project-st-time">5 hours ago</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="project-list-flow">
+                                                                                            <div class="projects-st-heading">
+                                                                                                <h2>New Order</h2>
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                                <span class="project-st-time">6 hours ago</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="project-list-flow">
+                                                                                            <div class="projects-st-heading">
+                                                                                                <h2>New User</h2>
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                                <span class="project-st-time">7 hours ago</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">
+                                                                                        <div class="project-list-flow">
+                                                                                            <div class="projects-st-heading">
+                                                                                                <h2>New Order</h2>
+                                                                                                <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                                <span class="project-st-time">9 hours ago</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="Settings" class="tab-pane fade">
+                                                                    <div class="setting-panel-area">
+                                                                        <div class="note-heading-indicate">
+                                                                            <h2><i class="icon nalika-gear"></i> Settings Panel</h2>
+                                                                            <p> You have 20 Settings. 5 not completed.</p>
+                                                                        </div>
+                                                                        <ul class="setting-panel-list">
+                                                                            <li>
+                                                                                <div class="checkbox-setting-pro">
+                                                                                    <div class="checkbox-title-pro">
+                                                                                        <h2>Show notifications</h2>
+                                                                                        <div class="ts-custom-check">
+                                                                                            <div class="onoffswitch">
+                                                                                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                                                                                <label class="onoffswitch-label" for="example">
+                                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                                    </label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="checkbox-setting-pro">
+                                                                                    <div class="checkbox-title-pro">
+                                                                                        <h2>Disable Chat</h2>
+                                                                                        <div class="ts-custom-check">
+                                                                                            <div class="onoffswitch">
+                                                                                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                                                                                <label class="onoffswitch-label" for="example3">
+                                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                                    </label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="checkbox-setting-pro">
+                                                                                    <div class="checkbox-title-pro">
+                                                                                        <h2>Enable history</h2>
+                                                                                        <div class="ts-custom-check">
+                                                                                            <div class="onoffswitch">
+                                                                                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                                                                                <label class="onoffswitch-label" for="example4">
+                                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                                    </label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="checkbox-setting-pro">
+                                                                                    <div class="checkbox-title-pro">
+                                                                                        <h2>Show charts</h2>
+                                                                                        <div class="ts-custom-check">
+                                                                                            <div class="onoffswitch">
+                                                                                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                                                                                <label class="onoffswitch-label" for="example7">
+                                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                                    </label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="checkbox-setting-pro">
+                                                                                    <div class="checkbox-title-pro">
+                                                                                        <h2>Update everyday</h2>
+                                                                                        <div class="ts-custom-check">
+                                                                                            <div class="onoffswitch">
+                                                                                                <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example2">
+                                                                                                <label class="onoffswitch-label" for="example2">
+                                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                                    </label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="checkbox-setting-pro">
+                                                                                    <div class="checkbox-title-pro">
+                                                                                        <h2>Global search</h2>
+                                                                                        <div class="ts-custom-check">
+                                                                                            <div class="onoffswitch">
+                                                                                                <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example6">
+                                                                                                <label class="onoffswitch-label" for="example6">
+                                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                                    </label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="checkbox-setting-pro">
+                                                                                    <div class="checkbox-title-pro">
+                                                                                        <h2>Offline users</h2>
+                                                                                        <div class="ts-custom-check">
+                                                                                            <div class="onoffswitch">
+                                                                                                <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example5">
+                                                                                                <label class="onoffswitch-label" for="example5">
+                                                                                                        <span class="onoffswitch-inner"></span>
+                                                                                                        <span class="onoffswitch-switch"></span>
+                                                                                                    </label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
+                <!-- Mobile Menu start -->
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="mobile-menu">
+                                    <nav id="dropdown">
+                                        <ul class="mobile-menu-nav">
+                                            <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <ul class="collapse dropdown-header-top">
+                                                    <li><a href="index.html">Dashboard v.1</a></li>
+                                                    <li><a href="index-1.html">Dashboard v.2</a></li>
+                                                    <li><a href="index-3.html">Dashboard v.3</a></li>
+                                                    <li><a href="product-list.html">Product List</a></li>
+                                                    <li><a href="product-edit.html">Product Edit</a></li>
+                                                    <li><a href="product-detail.html">Product Detail</a></li>
+                                                    <li><a href="product-cart.html">Product Cart</a></li>
+                                                    <li><a href="product-payment.html">Product Payment</a></li>
+                                                    <li><a href="analytics.html">Analytics</a></li>
+                                                    <li><a href="widgets.html">Widgets</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <ul id="demo" class="collapse dropdown-header-top">
+                                                    <li><a href="mailbox.html">Inbox</a>
+                                                    </li>
+                                                    <li><a href="mailbox-view.html">View Mail</a>
+                                                    </li>
+                                                    <li><a href="mailbox-compose.html">Compose Mail</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <ul id="others" class="collapse dropdown-header-top">
+                                                    <li><a href="file-manager.html">File Manager</a></li>
+                                                    <li><a href="contacts.html">Contacts Client</a></li>
+                                                    <li><a href="projects.html">Project</a></li>
+                                                    <li><a href="project-details.html">Project Details</a></li>
+                                                    <li><a href="blog.html">Blog</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                                    <li><a href="404.html">404 Page</a></li>
+                                                    <li><a href="500.html">500 Page</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">Interface <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
+                                                    <li><a href="google-map.html">Google Map</a>
+                                                    </li>
+                                                    <li><a href="data-maps.html">Data Maps</a>
+                                                    </li>
+                                                    <li><a href="pdf-viewer.html">Pdf Viewer</a>
+                                                    </li>
+                                                    <li><a href="x-editable.html">X-Editable</a>
+                                                    </li>
+                                                    <li><a href="code-editor.html">Code Editor</a>
+                                                    </li>
+                                                    <li><a href="tree-view.html">Tree View</a>
+                                                    </li>
+                                                    <li><a href="preloader.html">Preloader</a>
+                                                    </li>
+                                                    <li><a href="images-cropper.html">Images Cropper</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <ul id="Chartsmob" class="collapse dropdown-header-top">
+                                                    <li><a href="bar-charts.html">Bar Charts</a>
+                                                    </li>
+                                                    <li><a href="line-charts.html">Line Charts</a>
+                                                    </li>
+                                                    <li><a href="area-charts.html">Area Charts</a>
+                                                    </li>
+                                                    <li><a href="rounded-chart.html">Rounded Charts</a>
+                                                    </li>
+                                                    <li><a href="c3.html">C3 Charts</a>
+                                                    </li>
+                                                    <li><a href="sparkline.html">Sparkline Charts</a>
+                                                    </li>
+                                                    <li><a href="peity.html">Peity Charts</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <ul id="Tablesmob" class="collapse dropdown-header-top">
+                                                    <li><a href="static-table.html">Static Table</a>
+                                                    </li>
+                                                    <li><a href="data-table.html">Data Table</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <ul id="formsmob" class="collapse dropdown-header-top">
+                                                    <li><a href="basic-form-element.html">Basic Form Elements</a>
+                                                    </li>
+                                                    <li><a href="advance-form-element.html">Advanced Form Elements</a>
+                                                    </li>
+                                                    <li><a href="password-meter.html">Password Meter</a>
+                                                    </li>
+                                                    <li><a href="multi-upload.html">Multi Upload</a>
+                                                    </li>
+                                                    <li><a href="tinymc.html">Text Editor</a>
+                                                    </li>
+                                                    <li><a href="dual-list-box.html">Dual List Box</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <ul id="Appviewsmob" class="collapse dropdown-header-top">
+                                                    <li><a href="basic-form-element.html">Basic Form Elements</a>
+                                                    </li>
+                                                    <li><a href="advance-form-element.html">Advanced Form Elements</a>
+                                                    </li>
+                                                    <li><a href="password-meter.html">Password Meter</a>
+                                                    </li>
+                                                    <li><a href="multi-upload.html">Multi Upload</a>
+                                                    </li>
+                                                    <li><a href="tinymc.html">Text Editor</a>
+                                                    </li>
+                                                    <li><a href="dual-list-box.html">Dual List Box</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
+                                                <ul id="Pagemob" class="collapse dropdown-header-top">
+                                                    <li><a href="login.html">Login</a>
+                                                    </li>
+                                                    <li><a href="register.html">Register</a>
+                                                    </li>
+                                                    <li><a href="lock.html">Lock</a>
+                                                    </li>
+                                                    <li><a href="password-recovery.html">Password Recovery</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                </div>
+                <!-- Mobile Menu end -->
+                <div class="breadcome-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="breadcome-list">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="breadcomb-wp">
+                                                <div class="breadcomb-icon">
+                                                    <i class="icon nalika-home"></i>
+                                                </div>
+                                                <div class="breadcomb-ctn">
+                                                    <h2>Dashboard One</h2>
+                                                    <p>Welcome to Nalika <span class="bread-ntd">Admin Template</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="breadcomb-report">
+                                                <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="icon nalika-download"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-admin container-fluid">
+                <div class="row admin text-center">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="admin-content analysis-progrebar-ctn res-mg-t-15">
+                                    <h4 class="text-left text-uppercase"><b>Orders</b></h4>
+                                    <div class="row vertical-center-box vertical-center-box-tablet">
+                                        <div class="col-xs-3 mar-bot-15 text-left">
+                                            <label class="label bg-green">30% <i class="fa fa-level-up" aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="col-xs-9 cus-gh-hd-pro">
+                                            <h2 class="text-right no-margin">10,000</h2>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 78%;" class="progress-bar bg-green"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="margin-bottom:1px;">
+                                <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
+                                    <h4 class="text-left text-uppercase"><b>Tax Deduction</b></h4>
+                                    <div class="row vertical-center-box vertical-center-box-tablet">
+                                        <div class="text-left col-xs-3 mar-bot-15">
+                                            <label class="label bg-red">15% <i class="fa fa-level-down" aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="col-xs-9 cus-gh-hd-pro">
+                                            <h2 class="text-right no-margin">5,000</h2>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 38%;" class="progress-bar progress-bar-danger bg-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
+                                    <h4 class="text-left text-uppercase"><b>Revenue</b></h4>
+                                    <div class="row vertical-center-box vertical-center-box-tablet">
+                                        <div class="text-left col-xs-3 mar-bot-15">
+                                            <label class="label bg-blue">50% <i class="fa fa-level-up" aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="col-xs-9 cus-gh-hd-pro">
+                                            <h2 class="text-right no-margin">$70,000</h2>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 60%;" class="progress-bar bg-blue"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
+                                    <h4 class="text-left text-uppercase"><b>Yearly Sales</b></h4>
+                                    <div class="row vertical-center-box vertical-center-box-tablet">
+                                        <div class="text-left col-xs-3 mar-bot-15">
+                                            <label class="label bg-purple">80% <i class="fa fa-level-up" aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="col-xs-9 cus-gh-hd-pro">
+                                            <h2 class="text-right no-margin">$100,000</h2>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 60%;" class="progress-bar bg-purple"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-sales-area mg-tb-30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                            <div class="product-sales-chart">
+                                <div class="portlet-title">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="caption pro-sl-hd">
+                                                <span class="caption-subject text-uppercase"><b>Product Sales</b></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="actions graph-rp">
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <label class="btn btn-grey active">
+                                                        <input type="radio" name="options" class="toggle" id="option1" checked="">Today</label>
+                                                    <label class="btn btn-grey">
+                                                        <input type="radio" name="options" class="toggle" id="option2">Week</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="white-box analytics-info-cs mg-b-30 res-mg-t-30">
+                                <h3 class="box-title">Total Visit</h3>
+                                <ul class="list-inline two-part-sp">
+                                    <li>
+                                        <div id="sparklinedash"></div>
+                                    </li>
+                                    <li class="text-right sp-cn-r"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter sales-sts-ctn">8659</span></li>
+                                </ul>
+                            </div>
+                            <div class="white-box analytics-info-cs mg-b-30">
+                                <h3 class="box-title">Total Page Views</h3>
+                                <ul class="list-inline two-part-sp">
+                                    <li>
+                                        <div id="sparklinedash2"></div>
+                                    </li>
+                                    <li class="text-right"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter sales-sts-ctn">7469</span></li>
+                                </ul>
+                            </div>
+                            <div class="white-box analytics-info-cs mg-b-30">
+                                <h3 class="box-title">Unique Visitor</h3>
+                                <ul class="list-inline two-part-sp">
+                                    <li>
+                                        <div id="sparklinedash3"></div>
+                                    </li>
+                                    <li class="text-right"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter sales-sts-ctn">6011</span></li>
+                                </ul>
+                            </div>
+                            <div class="white-box analytics-info-cs">
+                                <h3 class="box-title">Bounce Rate</h3>
+                                <ul class="list-inline two-part-sp">
+                                    <li>
+                                        <div id="sparklinedash4"></div>
+                                    </li>
+                                    <li class="text-right"><i class="fa fa-level-down" aria-hidden="true"></i> <span class="sales-sts-ctn">18%</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="traffic-analysis-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="white-box tranffic-als-inner">
+                                <h3 class="box-title"><small class="pull-right m-t-10 text-success last-month-sc cl-one"><i class="fa fa-sort-asc"></i> 18% last month</small> Site Traffic</h3>
+                                <div class="stats-row">
+                                    <div class="stat-item">
+                                        <h6>Overall Growth</h6>
+                                        <b>80.40%</b></div>
+                                    <div class="stat-item">
+                                        <h6>Montly</h6>
+                                        <b>15.40%</b></div>
+                                    <div class="stat-item">
+                                        <h6>Day</h6>
+                                        <b>5.50%</b></div>
+                                </div>
+                                <div id="sparkline8"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="white-box tranffic-als-inner res-mg-t-30">
+                                <h3 class="box-title"><small class="pull-right m-t-10 text-danger last-month-sc cl-two"><i class="fa fa-sort-desc"></i> 18% last month</small>Site Traffic</h3>
+                                <div class="stats-row">
+                                    <div class="stat-item">
+                                        <h6>Overall Growth</h6>
+                                        <b>80.40%</b></div>
+                                    <div class="stat-item">
+                                        <h6>Montly</h6>
+                                        <b>15.40%</b></div>
+                                    <div class="stat-item">
+                                        <h6>Day</h6>
+                                        <b>5.50%</b></div>
+                                </div>
+                                <div id="sparkline9"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="white-box tranffic-als-inner res-mg-t-30">
+                                <h3 class="box-title"><small class="pull-right m-t-10 text-success last-month-sc cl-three"><i class="fa fa-sort-asc"></i> 18% last month</small>Site Traffic</h3>
+                                <div class="stats-row">
+                                    <div class="stat-item">
+                                        <h6>Overall Growth</h6>
+                                        <b>80.40%</b></div>
+                                    <div class="stat-item">
+                                        <h6>Montly</h6>
+                                        <b>15.40%</b></div>
+                                    <div class="stat-item">
+                                        <h6>Day</h6>
+                                        <b>5.50%</b></div>
+                                </div>
+                                <div id="sparkline10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-new-list-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="single-new-trend mg-t-30">
+                                <a href="#"><img src="img/new-product/5.png" alt=""></a>
+                                <div class="overlay-content">
+                                    <a href="#">
+                                        <h2>$280</h2>
+                                    </a>
+                                    <a href="#" class="btn-small">Now</a>
+                                    <div class="product-action">
+                                        <ul>
+                                            <li>
+                                                <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a class="pro-tlt" href="#">
+                                        <h4>Princes Diamond</h4>
+                                    </a>
+                                    <div class="pro-rating">
+                                        <i class="fa fa-star color"></i>
+                                        <i class="fa fa-star color"></i>
+                                        <i class="fa fa-star color"></i>
+                                        <i class="icon nalika-half-filled-rating-star color"></i>
+                                        <i class="icon nalika-half-filled-rating-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="single-new-trend mg-t-30">
+                                <a href="#"><img src="img/new-product/5.png" alt=""></a>
+                                <div class="overlay-content">
+                                    <a href="#">
+                                        <h2>$280</h2>
+                                    </a>
+                                    <a href="#" class="btn-small">Now</a>
+                                    <div class="product-action">
+                                        <ul>
+                                            <li>
+                                                <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="#">
+                                        <h4>Princes Diamond</h4>
+                                    </a>
+                                    <div class="pro-rating">
+                                        <i class="fa fa-star color"></i>
+                                        <i class="fa fa-star color"></i>
+                                        <i class="fa fa-star color"></i>
+                                        <i class="icon nalika-half-filled-rating-star color"></i>
+                                        <i class="icon nalika-half-filled-rating-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="single-new-trend mg-t-30">
+                                <a href="#"><img src="img/new-product/5.png" alt=""></a>
+                                <div class="overlay-content">
+                                    <a href="#">
+                                        <h2>$280</h2>
+                                    </a>
+                                    <a href="#" class="btn-small">Now</a>
+                                    <div class="product-action">
+                                        <ul>
+                                            <li>
+                                                <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="#">
+                                        <h4>Princes Diamond</h4>
+                                    </a>
+                                    <div class="pro-rating">
+                                        <i class="fa fa-star color"></i>
+                                        <i class="fa fa-star color"></i>
+                                        <i class="fa fa-star color"></i>
+                                        <i class="icon nalika-half-filled-rating-star color"></i>
+                                        <i class="icon nalika-half-filled-rating-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="single-new-trend mg-t-30">
+                                <a href="#"><img src="img/new-product/5.png" alt=""></a>
+                                <div class="overlay-content">
+                                    <a href="#">
+                                        <h2>$280</h2>
+                                    </a>
+                                    <a href="#" class="btn-small">Now</a>
+                                    <div class="product-action">
+                                        <ul>
+                                            <li>
+                                                <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="#">
+                                        <h4>Princes Diamond</h4>
+                                    </a>
+                                    <div class="pro-rating">
+                                        <i class="fa fa-star color"></i>
+                                        <i class="fa fa-star color"></i>
+                                        <i class="fa fa-star color"></i>
+                                        <i class="icon nalika-half-filled-rating-star color"></i>
+                                        <i class="icon nalika-half-filled-rating-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-sales-area mg-tb-30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                            <div class="product-sales-chart">
+                                <div class="portlet-title">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="caption pro-sl-hd">
+                                                <span class="caption-subject text-uppercase"><b>Order Statistic</b></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="actions graph-rp">
+                                                <a href="#" class="btn btn-dark-blue btn-circle active tip-top" data-toggle="tooltip" title="Upload">
+                                                        <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                                                    </a>
+                                                <a href="#" class="btn btn-dark btn-circle active tip-top" data-toggle="tooltip" title="Refresh">
+                                                        <i class="fa fa-reply" aria-hidden="true"></i>
+                                                    </a>
+                                                <a href="#" class="btn btn-blue-grey btn-circle active tip-top" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                    </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="line-chart" class="flot-chart flot-chart-sts line-chart-statistic"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="analytics-rounded mg-b-30 res-mg-t-30">
+                                <div class="analytics-rounded-content">
+                                    <h5>Percentage distribution</h5>
+                                    <h2><span class="counter">60</span>/20</h2>
+                                    <div class="text-center">
+                                        <div id="sparkline51"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="analytics-rounded">
+                                <div class="analytics-rounded-content">
+                                    <h5>Percentage division</h5>
+                                    <h2><span class="counter">150</span>/<span class="counter">54</span></h2>
+                                    <div class="text-center">
+                                        <div id="sparkline52"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="author-area-pro">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="personal-info-wrap">
+                                <div class="widget-head-info-box">
+                                    <div class="persoanl-widget-hd">
+                                        <h2>Jon Royita</h2>
+                                        <p>Founder of Uttara It Park</p>
+                                    </div>
+                                    <img src="img/notification/5.jpg" class="img-circle circle-border m-b-md" alt="profile">
+                                    <div class="social-widget-result">
+                                        <span>100 Tweets</span> |
+                                        <span>350 Following</span> |
+                                        <span>610 Followers</span>
+                                    </div>
+                                </div>
+                                <div class="widget-text-box">
+                                    <h4>Jhon Royita</h4>
+                                    <p>To all the athaists attacking me right now, I can't make you believe in God, you have to have faith.</p>
+                                    <div class="text-right like-love-list">
+                                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                                        <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="author-widgets-single res-mg-t-30">
+                                <div class="author-wiget-inner">
+                                    <div class="perso-img">
+                                        <img src="img/notification/6.jpg" class="img-circle circle-border m-b-md" alt="profile">
+                                    </div>
+                                    <div class="persoanl-widget-hd persoanl1-widget-hd">
+                                        <h2>Fire Foxy</h2>
+                                        <p>Founder of Uttara It House</p>
+                                    </div>
+                                    <div class="social-widget-result social-widget1-result">
+                                        <span>100 Tweets</span> |
+                                        <span>350 Following</span> |
+                                        <span>610 Followers</span>
+                                    </div>
+                                </div>
+                                <div class="widget-text-box">
+                                    <h4>Fire Foxy</h4>
+                                    <p>To all the athaists attacking me right now, I can't make you believe in God, you have to have faith.</p>
+                                    <div class="text-right like-love-list">
+                                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                                        <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="personal-info-wrap personal-info-ano res-mg-t-30">
+                                <div class="widget-head-info-box">
+                                    <div class="persoanl-widget-hd">
+                                        <h2>Jon Royita</h2>
+                                        <p>Founder of Uttara It Park</p>
+                                    </div>
+                                    <img src="img/contact/2.jpg" class="img-circle circle-border m-b-md" alt="profile">
+                                    <div class="social-widget-result">
+                                        <span>100 Tweets</span> |
+                                        <span>350 Following</span> |
+                                        <span>610 Followers</span>
+                                    </div>
+                                </div>
+                                <div class="widget-text-box">
+                                    <h4>Jhon Royita</h4>
+                                    <p>To all the athaists attacking me right now, I can't make you believe in God, you have to have faith.</p>
+                                    <div class="text-right like-love-list">
+                                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                                        <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calender-area mg-tb-30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="calender-inner">
+                                <div id='calendar'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer-copy-right">
+                                <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    <!-- jquery
+		============================================ -->
+    <script src="{{asset('them/js/vendor/jquery-1.11.3.min.js')}}"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="{{asset('them/js/bootstrap.min.js')}}"></script>
+    <!-- wow JS
+		============================================ -->
+    <script src="{{asset('them/js/wow.min.js')}}"></script>
+    <!-- price-slider JS
+		============================================ -->
+    <script src="{{asset('them/js/jquery-price-slider.js')}}"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="{{asset('them/js/jquery.meanmenu.js')}}"></script>
+    <!-- owl.carousel JS
+		============================================ -->
+    <script src="{{asset('them/js/owl.carousel.min.js')}}"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="{{asset('them/js/jquery.sticky.js')}}"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="{{asset('them/js/jquery.scrollUp.min.js')}}"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="{{asset('them/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{asset('them/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
+    <!-- metisMenu JS
+		============================================ -->
+    <script src="{{asset('them/js/metisMenu/metisMenu.min.js')}}"></script>
+    <script src="{{asset('them/js/metisMenu/metisMenu-active.js')}}"></script>
+    <!-- tab JS
+		============================================ -->
+    <script src="{{asset('them/js/tab.js')}}"></script>
+    <!-- icheck JS
+		============================================ -->
+    <script src="{{asset('them/js/icheck/icheck.min.js')}}"></script>
+    <script src="{{asset('them/js/icheck/icheck-active.js')}}"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script src="{{asset('them/js/plugins.js')}}"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="{{asset('them/js/main.js')}}"></script>
+</body>
+
 </html>
