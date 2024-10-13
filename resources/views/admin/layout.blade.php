@@ -2,19 +2,19 @@
 <html class="no-js" lang="en">
 
 <head>
-    @include('admin.headerCSS')
+    @include('admin.layout-data.headerCSS')
 </head>
 
 <body>
-    @include('admin.sidebar')
+    @include('admin.layout-data.sidebar')
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
-        @include('admin.topNav')        
+        @include('admin.layout-data.topNav')        
 
         @yield('page_content')
 				
-        @include('admin.footer')
+        @include('admin.layout-data.footer')
     </div>
-    @include('admin.footerJS')
+    @include('admin.layout-data.footerJS')
 </body>
 </html>
