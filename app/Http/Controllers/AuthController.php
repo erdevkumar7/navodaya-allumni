@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Support\Facades\Hash;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -121,6 +123,25 @@ class AuthController extends Controller
 
     public function registerAdminForm()
     {
-        return view();
+        return view('admin.layout-data.register');
+    }
+
+    public function registerAdminFormSubmit(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'nullable|string|max:255',
+            'phone_number' => 'nullable|string|max:20|unique:admins',
+            'email' => 'required|string|email|max:100|unique:admins',        
+            'password' => 'required|string|min:6',
+        ]);
+
+        $validatedData['original_password'] = $validatedData['password'];
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        $admim = Admin::create($validatedData);
+
+
+        return redirect()->back()->with('success', 'Admin registered successfully!');
+    
     }
 }

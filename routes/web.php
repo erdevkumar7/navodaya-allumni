@@ -26,6 +26,7 @@ Route::prefix('allumni')->group(function(){
 
 Route::prefix('admin')->group(function(){
     Route::get('/register',[AuthController::class, 'registerAdminForm'])->name('admin.registerAdminForm');
+    Route::post('/register',[AuthController::class, 'registerAdminFormSubmit'])->name('admin.registerAdminFormSubmit');
 
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/allumni-list', [AdminController::class, 'allumniList'])->name('admin.allumniList');
