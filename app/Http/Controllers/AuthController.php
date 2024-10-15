@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Support\Facades\Hash;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -59,61 +60,61 @@ class AuthController extends Controller
     // }
 
     public function registerNavodayanFormSubmit(Request $request)
-{
-    // Validation
-    $validatedData = $request->validate([
-        'first_name' => 'required|string|max:30',
-        'last_name' => 'required|string|max:30',
-        'email' => 'required|string|email|max:100|unique:users',
-        'phone_number' => 'required|numeric',
-        'city' => 'required|string',
-        'gender' => 'required',
-        'state' => 'required|string',
-        'district' => 'required|string',
-        'passout_batch' => 'required|string',
-        'profession' => 'required|string',
-        'profession_specification' => 'nullable|string|max:100',
-        'password' => 'required|string|min:6',
-    ]);
+    {
+        // Validation
+        $validatedData = $request->validate([
+            'first_name' => 'required|string|max:30',
+            'last_name' => 'required|string|max:30',
+            'email' => 'required|string|email|max:100|unique:users',
+            'phone_number' => 'required|numeric',
+            'city' => 'required|string',
+            'gender' => 'required',
+            'state' => 'required|string',
+            'district' => 'required|string',
+            'passout_batch' => 'required|string',
+            'profession' => 'required|string',
+            'profession_specification' => 'nullable|string|max:100',
+            'password' => 'required|string|min:6',
+        ]);
 
-    // Hashing the password and adding it to the validated data
-    $validatedData['original_password'] = $validatedData['password'];
-    $validatedData['password'] = Hash::make($validatedData['password']);
+        // Hashing the password and adding it to the validated data
+        $validatedData['original_password'] = $validatedData['password'];
+        $validatedData['password'] = Hash::make($validatedData['password']);
 
-    // Creating the user
-    try {
-        $allumuni = User::create($validatedData);
+        // Creating the user
+        try {
+            $allumuni = User::create($validatedData);
 
-        // Prepare user data for QR code
-        $qrData = [
-            'first_name' => $allumuni->first_name,
-            'last_name' => $allumuni->last_name,
-            'email' => $allumuni->email,
-            'phone_number' => $allumuni->phone_number,
-            'city' => $allumuni->city,
-            'state' => $allumuni->state,
-            'district' => $allumuni->district,
-            'passout_batch' => $allumuni->passout_batch,
-            'profession' => $allumuni->profession,
-        ];
+            // Prepare user data for QR code
+            $qrData = [
+                'first_name' => $allumuni->first_name,
+                'last_name' => $allumuni->last_name,
+                'email' => $allumuni->email,
+                'phone_number' => $allumuni->phone_number,
+                'city' => $allumuni->city,
+                'state' => $allumuni->state,
+                'district' => $allumuni->district,
+                'passout_batch' => $allumuni->passout_batch,
+                'profession' => $allumuni->profession,
+            ];
 
-        // Convert user data to JSON format for the QR code
-        $qrCodeData = json_encode($qrData);
+            // Convert user data to JSON format for the QR code
+            $qrCodeData = json_encode($qrData);
 
-        // Generate the QR code
-        $qrCodeImage = time() . '_' . $allumuni->id . '_qrcode.jpg';
-        $qrCodeFileName = 'qrcodes/' . $qrCodeImage;
-        QrCode::size(250)->generate($qrCodeData, public_path($qrCodeFileName));
+            // Generate the QR code
+            $qrCodeImage = time() . '_' . $allumuni->id . '_qrcode.jpg';
+            $qrCodeFileName = 'qrcodes/' . $qrCodeImage;
+            QrCode::size(250)->generate($qrCodeData, public_path($qrCodeFileName));
 
-        // Save the QR code image path in the user table
-        $allumuni->qr_code_image = $qrCodeImage;
-        $allumuni->save();
+            // Save the QR code image path in the user table
+            $allumuni->qr_code_image = $qrCodeImage;
+            $allumuni->save();
 
-        return redirect()->route('index')->with('success', 'Alumni added successfully, QR code generated!');
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', 'Failed to create alumni: ' . $e->getMessage());
+            return redirect()->route('index')->with('success', 'Alumni added successfully, QR code generated!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to create alumni: ' . $e->getMessage());
+        }
     }
-}
 
 
     public function generateQRcode()
@@ -131,7 +132,7 @@ class AuthController extends Controller
         $validatedData = $request->validate([
             'name' => 'nullable|string|max:255',
             'phone_number' => 'nullable|string|max:20|unique:admins',
-            'email' => 'required|string|email|max:100|unique:admins',        
+            'email' => 'required|string|email|max:70|unique:admins',
             'password' => 'required|string|min:6',
         ]);
 
@@ -141,7 +142,36 @@ class AuthController extends Controller
         $admim = Admin::create($validatedData);
 
 
-        return redirect()->back()->with('success', 'Admin registered successfully!');
-    
+        return redirect()->route('admin.adminLoginForm')->with('success', 'Admin registered successfully!');
     }
+
+    public function adminLoginForm()
+    {
+        return view('admin.layout-data.login');
+    }
+
+    public function adminLoginFormSubmit(Request $request)
+    {
+        // Validate the request
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string|min:6',
+        ]);
+
+        // Attempt to log the admin in
+        if (Auth::guard('admin')->attempt($credentials)) {
+            // Authentication passed
+            return redirect()->route('admin.dashboard')->with('success', 'Logged in successfully!');
+        }
+
+        // Authentication failed
+        return redirect()->back()->withErrors(['email' => 'Invalid credentials.']);
+    }
+
+        // Handle admin logout
+        public function logout()
+        {
+            Auth::guard('admin')->logout();
+            return redirect()->route('admin.adminLoginForm')->with('success', 'Logged out successfully!');
+        }
 }

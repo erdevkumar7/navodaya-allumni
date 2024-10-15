@@ -18,17 +18,22 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
-Route::prefix('allumni')->group(function(){
+Route::prefix('allumni')->group(function () {
     Route::get('/register', [AuthController::class, 'registerNavodayanForm'])->name('user.registerNavodayanForm');
     Route::post('/register', [AuthController::class, 'registerNavodayanFormSubmit'])->name('user.registerNavodayanFormSubmit');
-
 });
 
-Route::prefix('admin')->group(function(){
-    Route::get('/register',[AuthController::class, 'registerAdminForm'])->name('admin.registerAdminForm');
-    Route::post('/register',[AuthController::class, 'registerAdminFormSubmit'])->name('admin.registerAdminFormSubmit');
+Route::prefix('admin')->group(function () {
+    Route::get('/register', [AuthController::class, 'registerAdminForm'])->name('admin.registerAdminForm');
+    Route::post('/register', [AuthController::class, 'registerAdminFormSubmit'])->name('admin.registerAdminFormSubmit');
 
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/allumni-list', [AdminController::class, 'allumniList'])->name('admin.allumniList');
+    Route::get('/login', [AuthController::class, 'adminLoginForm'])->name('admin.adminLoginForm');
+    Route::post('/login', [AuthController::class, 'adminLoginFormSubmit'])->name('admin.adminLoginFormSubmit');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
+
+    Route::middleware('admin')->group(function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/allumni-list', [AdminController::class, 'allumniList'])->name('admin.allumniList');
+    });
+
 });
-

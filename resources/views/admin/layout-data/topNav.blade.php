@@ -59,7 +59,7 @@
                                                             </div>
                                                         </a>
                                                     </li>
-                                                
+
                                                 </ul>
                                                 <div class="message-view">
                                                     <a href="#">View All Messages</a>
@@ -91,9 +91,16 @@
                                                             class="icon nalika-settings author-log-ic"></span>
                                                         Settings</a>
                                                 </li>
-                                                <li><a href="login.html"><span
-                                                            class="icon nalika-unlocked author-log-ic"></span>
-                                                        Log Out</a>
+                                                <li>
+                                                    <form action="{{ route('admin.logout') }}" method="POST"
+                                                        style="display: inline;">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-link"
+                                                            style="padding: 0; border: none; background: none;">
+                                                            <span class="icon nalika-unlocked author-log-ic"></span> Log
+                                                            Out
+                                                        </button>
+                                                    </form>
                                                 </li>
                                             </ul>
                                         </li>
