@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Org;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Contracts\Support\ValidatedData;
@@ -131,7 +132,7 @@ class AuthController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'nullable|string|max:255',
-            'phone_number' => 'nullable|string|max:20|unique:admins',
+            'phone_number' => 'nullable|string|max:20',
             'email' => 'required|string|email|max:70|unique:admins',
             'password' => 'required|string|min:6',
         ]);
@@ -168,10 +169,58 @@ class AuthController extends Controller
         return redirect()->back()->withErrors(['email' => 'Invalid credentials.']);
     }
 
-        // Handle admin logout
-        public function logout()
-        {
-            Auth::guard('admin')->logout();
-            return redirect()->route('admin.adminLoginForm')->with('success', 'Logged out successfully!');
+    public function orgRegForm()
+    {
+        return view('org.register');
+    }
+
+    public function orgRegFormSubmit(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'nullable|string|max:255',
+            'phone_number' => 'nullable|string|max:20',
+            'email' => 'required|string|email|max:70|unique:orgs',
+            'password' => 'required|string|min:6',
+        ]);
+
+        $validatedData['original_password'] = $validatedData['password'];
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        $org = Org::create($validatedData);
+        return redirect()->route('org.loginForm')->with('success', 'Organizer registered successfully!');
+    }
+
+    public function orgLoginForm()
+    {
+        return view('org.login');
+    }
+
+    public function orgLoginFormSubnit(Request $request)
+    {
+        // Validate input
+        $credentials = $request->validate([
+            'email' => 'required|string|email|max:70',
+            'password' => 'required|string|min:6',
+        ]);
+
+        // Attempt to log in
+        if (Auth::guard('org')->attempt($credentials)) {
+            return redirect()->route('org.dashboard')->with('success', 'Logged in successfully!');
         }
+
+        return back()->withErrors(['email' => 'Invalid credentials.']);
+    }
+
+    // Handle admin logout
+    public function adminLogout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.adminLoginForm')->with('success', 'Logged out successfully!');
+    }
+
+    public function orgLogout()
+    {
+        Auth::guard('org')->logout();
+        return redirect()->route('org.loginForm')->with('success', 'Logged out successfully!');
+    }
 }
